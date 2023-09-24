@@ -107,7 +107,3 @@
 
 - **Een FTP-ophaal- en afzetplek voor informatie gebruiken heeft voor- en nadelen. Wat zijn alternatieven?**
   - E-mail, cloudopslag, sociale media, fysieke schijven, delen via VPN, WeTransfer.
-
-```
-
-```
