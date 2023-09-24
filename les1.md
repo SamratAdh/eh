@@ -62,7 +62,7 @@
 
 ## Demo 2: Poort Scannen met Nmap in Python
 
-```Nmap uitgetest.
+`Nmap uitgetest.
   $ py portscan.py
   <class 'dict'>
   {'nmap': {'command*line': 'nmap -oX - -p 80 -v --version-all pcwijs.live', 'scaninfo': {'tcp': {'method': 'syn', 'services': '80'}}, 'scanstats': {'timestr': 'Tue Sep 19 10:59:16 2023', 'elapsed': '0.84', 'uphosts': '1', 'downhosts': '0', 'totalhosts': '1'}}, 'scan': {'172.67.129.117': {'hostnames': [{'name': 'pcwijs.live', 'type': 'user'}], 'addresses': {'ipv4': '172.67.129.117'}, 'vendor': {}, 'status': {'state': 'up', 'reason': 'syn-ack'}, 'tcp': {80: {'state': 'open', 'reason': 'syn-ack', 'name': 'http', 'product': '', 'version': '', 'extrainfo': '', 'conf': '3', 'cpe': ''}}}}}
@@ -97,7 +97,7 @@
 
   OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
   Nmap done: 1 IP address (1 host up) scanned in 45.88 seconds
-```
+`
 
 ## Demo 4: Screenshots Nemen (en indien gewenst via FTP Opladen)
 
