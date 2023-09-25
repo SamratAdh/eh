@@ -61,11 +61,15 @@
   - Ja, je kunt bijvoorbeeld een poortscan doen om te zien welke poorten open zijn, kijken naar het type tijdszone, postcode, enz.
 
 ## Demo 2: Poort Scannen met Nmap in Python
-Poort 80/http staat open in het voorbeeld. Nmap uitgetest.
+Poort 80/http staat open in het voorbeeld. Nmap uitgetest zowel met python als terminal.
+- Nmap met python
 ```
 $ py portscan.py
   <class 'dict'>
   {'nmap': {'command*line': 'nmap -oX - -p 80 -v --version-all pcwijs.live', 'scaninfo': {'tcp': {'method': 'syn', 'services': '80'}}, 'scanstats': {'timestr': 'Tue Sep 19 10:59:16 2023', 'elapsed': '0.84', 'uphosts': '1', 'downhosts': '0', 'totalhosts': '1'}}, 'scan': {'172.67.129.117': {'hostnames': [{'name': 'pcwijs.live', 'type': 'user'}], 'addresses': {'ipv4': '172.67.129.117'}, 'vendor': {}, 'status': {'state': 'up', 'reason': 'syn-ack'}, 'tcp': {80: {'state': 'open', 'reason': 'syn-ack', 'name': 'http', 'product': '', 'version': '', 'extrainfo': '', 'conf': '3', 'cpe': ''}}}}}
+```
+- Nmap met terminal
+```
   nmap -sVC -O -T4 scanme.nmap.org
   Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-19 10:34 Romance Summer Time
   Nmap scan report for scanme.nmap.org (45.33.32.156)
