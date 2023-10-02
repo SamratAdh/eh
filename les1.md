@@ -61,46 +61,51 @@
   - Ja, je kunt bijvoorbeeld een poortscan doen om te zien welke poorten open zijn, kijken naar het type tijdszone, postcode, enz.
 
 ## Demo 2: Poort Scannen met Nmap in Python
-Poort 80/http staat open in het voorbeeld. Nmap uitgetest zowel met python als terminal.
-- Nmap met python
-```
-$ py portscan.py
-  <class 'dict'>
-  {'nmap': {'command*line': 'nmap -oX - -p 80 -v --version-all pcwijs.live', 'scaninfo': {'tcp': {'method': 'syn', 'services': '80'}}, 'scanstats': {'timestr': 'Tue Sep 19 10:59:16 2023', 'elapsed': '0.84', 'uphosts': '1', 'downhosts': '0', 'totalhosts': '1'}}, 'scan': {'172.67.129.117': {'hostnames': [{'name': 'pcwijs.live', 'type': 'user'}], 'addresses': {'ipv4': '172.67.129.117'}, 'vendor': {}, 'status': {'state': 'up', 'reason': 'syn-ack'}, 'tcp': {80: {'state': 'open', 'reason': 'syn-ack', 'name': 'http', 'product': '', 'version': '', 'extrainfo': '', 'conf': '3', 'cpe': ''}}}}}
-```
-- Nmap met terminal
-```
-  nmap -sVC -O -T4 scanme.nmap.org
-  Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-19 10:34 Romance Summer Time
-  Nmap scan report for scanme.nmap.org (45.33.32.156)
-  Host is up (0.16s latency).
-  Not shown: 923 closed tcp ports (reset), 68 filtered tcp ports (no-response)
-  PORT STATE SERVICE VERSION
-  21/tcp open tcpwrapped
-  22/tcp open tcpwrapped
-  | ssh-hostkey:
-  | 1024 ac:00:a0:1a:82:ff:cc:55:99:dc:67:2b:34:97:6b:75 (DSA)
-  | 2048 20:3d:2d:44:62:2a:b0:5a:9d:b5:b3:05:14:c2:a6:b2 (RSA)
-  | 256 96:02:bb:5e:57:54:1c:4e:45:2f:56:4c:4a:24:b2:57 (ECDSA)
-  |* 256 33:fa:91:0f:e0:e1:7b:1f:6d:05:a2:b0:f1:54:41:56 (ED25519)
-  80/tcp open tcpwrapped
-  |\_http-server-header: Apache/2.4.7 (Ubuntu)
-  |\_http-favicon: Nmap Project
-  110/tcp open tcpwrapped
-  143/tcp open tcpwrapped
-  443/tcp open tcpwrapped
-  8010/tcp open tcpwrapped
-  9929/tcp open tcpwrapped
-  31337/tcp open tcpwrapped
-  Device type: general purpose|storage-misc|firewall|WAP|webcam
-  Running (JUST GUESSING): Linux 4.X|2.6.X|3.X|2.4.X (88%), Synology DiskStation Manager 5.X (86%), WatchGuard Fireware 11.X (86%), Tandberg embedded (85%)
-  OS CPE: cpe:/o:linux:linux_kernel:4.0 cpe:/o:linux:linux_kernel:2.6.39 cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel cpe:/a:synology:diskstation_manager:5.1 cpe:/o:watchguard:fireware:11.8 cpe:/o:linux:linux_kernel:2.4 cpe:/h:tandberg:vcs
-  Aggressive OS guesses: Linux 4.0 (88%), Linux 2.6.39 (87%), Linux 3.10 - 3.16 (87%), Linux 3.10 (86%), Linux 2.6.32 (86%), Linux 2.6.32 or 3.10 (86%), Linux 3.4 (86%), Linux 3.5 (86%), Linux 4.2 (86%), Linux 4.4 (86%)
-  No exact OS matches for host (test conditions non-ideal).
-  Network Distance: 15 hops
 
-  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-  Nmap done: 1 IP address (1 host up) scanned in 45.88 seconds
+Poort 80/http staat open in het voorbeeld. Nmap uitgetest zowel met python als terminal.
+
+- Nmap met python
+
+```py
+$ py portscan.py
+<class 'dict'>
+{'nmap': {'command\*line': 'nmap -oX - -p 80 -v --version-all pcwijs.live', 'scaninfo': {'tcp': {'method': 'syn', 'services': '80'}}, 'scanstats': {'timestr': 'Tue Sep 19 10:59:16 2023', 'elapsed': '0.84', 'uphosts': '1', 'downhosts': '0', 'totalhosts': '1'}}, 'scan': {'172.67.129.117': {'hostnames': [{'name': 'pcwijs.live', 'type': 'user'}], 'addresses': {'ipv4': '172.67.129.117'}, 'vendor': {}, 'status': {'state': 'up', 'reason': 'syn-ack'}, 'tcp': {80: {'state': 'open', 'reason': 'syn-ack', 'name': 'http', 'product': '', 'version': '', 'extrainfo': '', 'conf': '3', 'cpe': ''}}}}}
+```
+
+- Nmap met terminal
+
+```ps
+nmap -sVC -O -T4 scanme.nmap.org
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-19 10:34 Romance Summer Time
+Nmap scan report for scanme.nmap.org (45.33.32.156)
+Host is up (0.16s latency).
+Not shown: 923 closed tcp ports (reset), 68 filtered tcp ports (no-response)
+PORT STATE SERVICE VERSION
+21/tcp open tcpwrapped
+22/tcp open tcpwrapped
+| ssh-hostkey:
+| 1024 ac:00:a0:1a:82:ff:cc:55:99:dc:67:2b:34:97:6b:75 (DSA)
+| 2048 20:3d:2d:44:62:2a:b0:5a:9d:b5:b3:05:14:c2:a6:b2 (RSA)
+| 256 96:02:bb:5e:57:54:1c:4e:45:2f:56:4c:4a:24:b2:57 (ECDSA)
+|\* 256 33:fa:91:0f:e0:e1:7b:1f:6d:05:a2:b0:f1:54:41:56 (ED25519)
+80/tcp open tcpwrapped
+|\_http-server-header: Apache/2.4.7 (Ubuntu)
+|\_http-favicon: Nmap Project
+110/tcp open tcpwrapped
+143/tcp open tcpwrapped
+443/tcp open tcpwrapped
+8010/tcp open tcpwrapped
+9929/tcp open tcpwrapped
+31337/tcp open tcpwrapped
+Device type: general purpose|storage-misc|firewall|WAP|webcam
+Running (JUST GUESSING): Linux 4.X|2.6.X|3.X|2.4.X (88%), Synology DiskStation Manager 5.X (86%), WatchGuard Fireware 11.X (86%), Tandberg embedded (85%)
+OS CPE: cpe:/o:linux:linux_kernel:4.0 cpe:/o:linux:linux_kernel:2.6.39 cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel cpe:/a:synology:diskstation_manager:5.1 cpe:/o:watchguard:fireware:11.8 cpe:/o:linux:linux_kernel:2.4 cpe:/h:tandberg:vcs
+Aggressive OS guesses: Linux 4.0 (88%), Linux 2.6.39 (87%), Linux 3.10 - 3.16 (87%), Linux 3.10 (86%), Linux 2.6.32 (86%), Linux 2.6.32 or 3.10 (86%), Linux 3.4 (86%), Linux 3.5 (86%), Linux 4.2 (86%), Linux 4.4 (86%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 15 hops
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 45.88 seconds
 ```
 
 ## Demo 4: Screenshots Nemen (en indien gewenst via FTP Opladen)
